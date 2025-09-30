@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sua Oferta — Página de Destino</title>
+  <meta name="description" content="Página simples e rápida para campanhas do Google Ads. Personalize título, descrição e CTA.">
+  <!-- Inserir tag de rastreamento do Google Ads / Analytics aqui (ex: gtag) -->
+  <!-- Exemplo: <script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script> -->
+  <style>
+    /* Estilo minimalista: fundo branco, tipografia legível e layout responsivo */
+    :root{--max-width:980px;--accent:#0b62d6}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:#ffffff;
+      color:#111;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+    .container{
+      max-width:var(--max-width);
+      width:100%;
+      padding:40px;
+      border-radius:12px;
+      box-shadow:0 6px 24px rgba(16,24,40,0.06);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:32px;
+      align-items:center;
+    }
+    @media (max-width:880px){
+      .grid{grid-template-columns:1fr;}
+      .container{padding:28px}
+    }
+    h1{font-size:28px;margin:0 0 12px}
+    p.lead{margin:0 0 20px;color:#444;line-height:1.5}
+    .cta{
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      padding:14px 18px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow:0 6px 18px rgba(11,98,214,0.14);
+    }
+    .small{font-size:14px;color:#666}
+    .features{display:flex;flex-direction:column;gap:10px}
+    .feature{padding:12px;border-radius:8px;border:1px solid #f0f0f0}
+    .right-card{background:#fafafa;padding:20px;border-radius:10px;border:1px solid #f2f2f2}
+    footer{margin-top:20px;font-size:13px;color:#777}
+    .logo{font-weight:700;color:#000;margin-bottom:14px}
+    /* Form styles */
+    form{display:flex;flex-direction:column;gap:10px}
+    input[type="text"],input[type="email"]{padding:12px;border-radius:8px;border:1px solid #e6e6e6;font-size:15px}
+    input[type="submit"]{border:0;cursor:pointer}
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <div class="grid">
+      <section>
+        <div class="logo">SuaMarca</div>
+        <h1>Oferta rápida — Página limpa e de carregamento rápido</h1>
+        <p class="lead">Esta é uma landing page minimalista pensada para campanhas do Google Ads: foco no CTA, carregamento rápido e sem elementos distrativos.</p>
+
+        <a class="cta" href="#form">Quero saber mais</a>
+
+        <div style="height:18px"></div>
+
+        <div class="features" aria-hidden="false">
+          <div class="feature"><strong>Entrega imediata</strong> — Informação direta para conversão.</div>
+          <div class="feature"><strong>Compatível mobile</strong> — Testada para celular e desktop.</div>
+          <div class="feature"><strong>Fácil de editar</strong> — Abra o HTML e substitua textos e links.</div>
+        </div>
+
+        <footer>
+          <p class="small">Política de privacidade • Termos de uso</p>
+        </footer>
+      </section>
+
+      <aside class="right-card" aria-label="Formulário de contato">
+        <h2 style="margin-top:0">Receba uma proposta</h2>
+        <form id="form" action="/submit" method="post" onsubmit="handleSubmit(event)">
+          <input type="text" name="name" placeholder="Seu nome" required>
+          <input type="email" name="email" placeholder="seu@email.com" required>
+          <input type="text" name="phone" placeholder="Telefone (opcional)">
+          <input type="submit" value="Enviar" class="cta">
+        </form>
+        <p class="small" style="margin-top:12px">Ou ligue: <a href="tel:+5511999999999">(11) 99999‑9999</a></p>
+      </aside>
+    </div>
+  </main>
+
+  <script>
+    // Exemplo leve de submissão (substitua pela sua integração real)
+    function handleSubmit(e){
+      e.preventDefault();
+      var form = e.target;
+      var data = new FormData(form);
+      // Aqui você pode enviar via fetch para seu endpoint de back-end
+      // fetch('/submit', { method:'POST', body:data })...
+      alert('Obrigado! Sua solicitação foi enviada.');
+      form.reset();
+    }
+  </script>
+</body>
+</html>
